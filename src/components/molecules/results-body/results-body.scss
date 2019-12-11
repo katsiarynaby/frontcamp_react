@@ -1,0 +1,42 @@
+.results-body {
+  &--result-count {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 120px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #555;
+  }
+
+
+  &__movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 400px;
+    padding: 60px 70px;
+    background-color: #232323;
+
+    &--no-found {
+      margin: 0 auto;
+      color: #fff;
+      font-size: 50px;
+      line-height: 400px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    background-color: #555;
+
+    .icon-button {
+      width: 200px;
+      height: 80px;
+    }
+  }
+}

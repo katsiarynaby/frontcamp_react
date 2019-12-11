@@ -1,0 +1,108 @@
+.film {
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    height: 550px;
+    background: url('../../../../img/background.jpg');
+
+    &__logo {
+        position: absolute;
+        left: 25px;
+        top: 25px;
+    }
+
+    &__image {
+        height: 400px;
+        width: 280px;
+        margin-right: 60px;
+    }
+
+    &__title {
+        max-width: 620px;
+        font-size: 45px;
+        margin-right: 30px;
+        color: #FFF;
+    }
+
+    &__average {
+        margin-top: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
+        border: 1px solid #ffffff;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+
+        &__text {
+            font-size: 30px;
+            color: #A1E66F;
+        }
+    }
+
+    &__description {
+        font-size: 18px;
+        color: #FFF;
+    }
+
+    &__overview {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+
+        &--title-and-raiting {
+            display: flex;
+            margin-top: 100px;
+            margin-bottom: 10px;
+        }
+
+        &--release-and-runtime {
+            display: flex;
+            margin-bottom: 20px;
+
+
+            &__release-date,
+            &__runtime {
+                padding: 0;
+                margin-right: 20px;
+                font-size: 20px;
+                border: none;
+                color: #F65261;
+            }
+        }
+    }
+
+    &__icon-search {
+        right: 50px;
+        top: 30px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        cursor: pointer;
+        color:white;
+        opacity: 0.8;
+    }
+
+    &__tagline {
+        font-size: 15px;
+        color: #FFF;
+        margin-bottom: 30px;
+    }
+}
+
+.film:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.3;
+}

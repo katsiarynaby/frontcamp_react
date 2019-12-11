@@ -1,0 +1,36 @@
+.search-filter {
+  display: flex;
+  height: 35px;
+  color: #fff;
+  font-size: 15px;
+
+  &__title {
+    margin-right: 20px;
+    color: #fff;
+    line-height: 35px;
+  }
+
+  &__filters {
+    overflow: hidden;
+    border-radius: 4px;
+
+    .search-button {
+      height: 35px;
+      padding: 0 30px;
+      color:#fff;
+      font-size: 15px;
+      background-color: #424242;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      opacity: 0.8;
+    }
+
+    .search-button--active {
+      height: 35px;
+      padding: 0 30px;
+      font-size: 15px;
+      border-radius: 0;
+    }
+  }
+}
