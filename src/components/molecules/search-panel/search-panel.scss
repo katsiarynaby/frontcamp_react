@@ -1,0 +1,53 @@
+.search-panel {
+    position: relative;
+    padding-top: 110px;
+    height: 400px;
+    background: url('../../../../img/background.jpg');
+
+    h1 {
+        color: #F65261;
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        font-size: 15px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .icon-button {
+        position: absolute;
+        top: 0px;
+        left: 25px;
+        width: 200px;
+        height: 80px;
+    }
+
+    &__title {
+        font-size: 30px;
+        color: #FFF;
+        margin-left: 130px;
+    }
+
+    &__search {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+
+        .search-field {
+            margin-right: 15px;
+        }
+    }
+
+    &__first-filter {
+        margin-left: 130px;
+        margin-top: 15px;
+    }
+
+    &__second-filter {
+        bottom: -52.5px;
+        right: 120px;
+        position: absolute;
+    }
+}
