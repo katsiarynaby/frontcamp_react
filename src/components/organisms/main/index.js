@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import SearchPanel from '../../molecules/search-panel/index';
 import ResultsBody from '../../molecules/results-body/index';
+import Film from '../../molecules/film'
 
 import { MOVIES_API } from '../../../api/index';
 
@@ -11,56 +12,60 @@ const blockName = 'main';
 
 export default class Main extends Component {
 
-    state = {
-        film: null,
-        movies: [],
-        genre: '',
-        count: '',
-        showSearchPanel: true,
+  state = {
+    film: null,
+    movies: [],
+    genre: '',
+    count: '',
+    showSearchPanel: true,
 
-    };
+  };
 
-    getMovie = (id) => {
-        MOVIES_API.fetchMovie(id)
-            .then(result => {
-                this.setState({ film: result })
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    };
+  getMovie = (id, genre) => {
+    MOVIES_API.fetchMovie(id)
+      .then(result => {
+        this.setState({ film: result, genre: genre, showSearchPanel: false })
+      })
+  };
 
-    getMovies = () => {
-        MOVIES_API.fetchMovies()
-            .then(result => {
-                console.log(result)
-                this.setState({ movies: result.data, count: result.total })
-            }
-            )
-        console.log(this.state)
-    }
+  getMovies = () => {
+    MOVIES_API.fetchMovies()
+      .then(result => {
+        this.setState({ movies: result.data, count: result.total })
+      }
+      )
+  }
 
-    render() {
-        const { movie, movies, count, genre, showSearchPanel } = this.state;
+  getSearchPanel = () => {
+    this.setState({ film: null, showSearchPanel: true })
+  }
 
-        return (
-            <main className={blockName}>
-                {showSearchPanel ?
-                    <SearchPanel
-                        getSearchParams={this.getMovies}
-                    /> :
-                    <Film 
-                        movie={movie}
-                    />
-                }
-                <ResultsBody
-                    movies={movies}
-                    genre={genre}
-                    count={count}
-                    showSearchPanel={showSearchPanel}
-                    />
-            </main>
-        )
 
-    };
+
+  render() {
+    const { film, movies, count, genre, showSearchPanel } = this.state;
+
+    return (
+      <main className={blockName}>
+        {showSearchPanel ?
+          <SearchPanel
+            getSearchParams={this.getMovies}
+          /> :
+          <Film
+            film={film}
+            onClickSearch={this.getSearchPanel}
+
+          />
+        }
+        <ResultsBody
+          film={film}
+          movies={movies}
+          genre={genre}
+          count={count}
+          showSearchPanel={showSearchPanel}
+          chooseFilm={this.getMovie}
+        />
+      </main>
+    )
+  };
 }
