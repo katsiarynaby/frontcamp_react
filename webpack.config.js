@@ -14,7 +14,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx']
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -32,14 +32,14 @@ module.exports = {
           '@babel/preset-react',
           '@babel/preset-env',
         ],
-        plugins: ['@babel/proposal-class-properties'],
+        plugins: ['@babel/proposal-class-properties']
       },
     }, {
       test: /\.css?$/,
       use: [
         MiniCssExtractPlugin.loader,
         'css-loader',
-      ],
+      ]
     }, {
       test: /\.scss?$/,
       use: [
@@ -51,14 +51,14 @@ module.exports = {
         }, {
           loader: 'sass-loader',
           options: isDevelopment ? {sourceMap: true} : {},
-        },
-      ],
+        }
+      ]
     }, {
       test: /\.(png|svg|jpg|gif)$/,
       use: [
-        'file-loader',
-      ],
-    }],
+         'file-loader',
+        ],
+    },]
   },
   devServer: {
     compress: true,
@@ -69,6 +69,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'bundle.css',
-    }),
+    })
   ],
 };
