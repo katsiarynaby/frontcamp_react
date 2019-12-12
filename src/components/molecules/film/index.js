@@ -35,12 +35,11 @@ export default class Film extends PureComponent {
           </div>
           <div className={`${blockName}__overview--release-and-runtime`}>
             <div className={`${blockName}__overview--release-and-runtime__release-date`}>
-              {' '}
-              {`${getYear(release_date)} years`}
-            </div>
+              {getYear(release_date)} <span>{`years`}</span>
+              </div>
             {runtime ?
               (<div className={`${blockName}__overview--release-and-runtime__runtime`}>
-                {`${runtime} min`}
+              {runtime} <span>{`min`}</span>
               </div>) :
               null}
           </div>

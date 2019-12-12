@@ -32,6 +32,7 @@ export default class ResultsBody extends PureComponent {
       }
       return (
         <CardFilm
+          key={movie.id}
           movie={movie}
           onClick={() => chooseFilm(movie.id, movie.genres[0])}
         />

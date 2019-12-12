@@ -66,7 +66,6 @@
             display: flex;
             margin-bottom: 20px;
 
-
             &__release-date,
             &__runtime {
                 padding: 0;
@@ -74,6 +73,10 @@
                 font-size: 20px;
                 border: none;
                 color: #F65261;
+
+                span {
+                    color: #cec8c8;
+                }
             }
         }
     }

@@ -24,6 +24,7 @@ export default class SearchFilter extends PureComponent {
 
       return filters.map(filter => (
         <SearchButton
+          key={filter}
           onClick={this.changeActiveFilter}
           value={filter}
           active={filter === activeFilter}
