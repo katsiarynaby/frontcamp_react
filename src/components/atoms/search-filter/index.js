@@ -11,13 +11,11 @@ export default class SearchFilter extends PureComponent {
     activeFilter: this.props.activeFilter,
   };
 
-  changeActiveFilter = e => {
-    const { value } = e.target;
+  changeActiveFilter(filter) {
     const { getActiveFilter } = this.props;
 
-    this.setState({ activeFilter: value },
+    this.setState({ activeFilter: filter.key },
       () => getActiveFilter(this.state.activeFilter));
-
   }
 
   renderFilters = filters => {
@@ -25,10 +23,10 @@ export default class SearchFilter extends PureComponent {
 
     return filters.map(filter => (
       <SearchButton
-        key={filter}
-        onClick={this.changeActiveFilter}
-        value={filter}
-        active={filter === activeFilter}
+        key={filter.key}
+        onClick={() => this.changeActiveFilter(filter)}
+        value={filter.name}
+        active={filter.key === activeFilter}
       />
     ));
   };

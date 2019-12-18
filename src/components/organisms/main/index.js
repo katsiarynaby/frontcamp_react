@@ -20,7 +20,7 @@ class Main extends Component {
 
   componentDidMount() {
     const { getMovies, routes, movies } = this.props;
-    if ( movies && routes.search) {
+    if (movies && routes.search) {
       getMovies(routes.search);
     }
   };
@@ -28,9 +28,12 @@ class Main extends Component {
   static getDerivedStateFromProps(props, state) {
     const { film, getGenre, getMovies } = props;
     if (film && film.id !== state.filmId) {
-      getMovies({ 
-        params: { search: film.genres[0], searchBy: 'genres' },
-        config: 'genres' 
+      getMovies({
+        params: {
+          search: film.genres[0],
+          searchBy: 'genres'
+        },
+        config: 'genres'
       });
       getGenre(film.genres[0]);
       return { showSearchPanel: false, filmId: film.id }
@@ -62,13 +65,11 @@ class Main extends Component {
 
 
   render() {
-
     const { showSearchPanel } = this.state;
 
     const {
       getMovies,
       getFilm,
-      getGenre,
       movies,
       count,
       film,
@@ -126,7 +127,7 @@ class Main extends Component {
           <Route
             exact
             path='/'
-            component={() => <Redirect to='/movies'/>}
+            component={() => <Redirect to='/movies' />}
           />
         </Switch>
       </main>

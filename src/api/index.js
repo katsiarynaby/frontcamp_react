@@ -5,22 +5,26 @@ import { push } from 'react-router-redux';
 const DEFAULT_URL = 'https://reactjs-cdp.herokuapp.com/movies';
 
 function transformParams(params) {
-  if (params.sortBy === 'release date') {
-    params.sortBy = 'release_date';
-  }
-  if (params.sortBy === 'rating') {
-    params.sortBy = 'vote_average';
-  }
   params.sortOrder = 'desc';
-  return params;
-};
 
+  switch (params.sortBy) {
+    case 'release date':
+      params.sortBy = 'release_date';
+      return;
+    case 'rating':
+      params.sortBy = "vote_average";
+      return;
+    default:
+      return params
+  }
+};
 
 export const MOVIES_API = {
   fetchMovie(id) {
     return fetch(`${DEFAULT_URL}/${id}`)
       .then(res => res.json());
   },
+
   fetchMovies(params, dispatch) {
     if (typeof params === 'string') {
       return fetch(`${DEFAULT_URL}${params}`)

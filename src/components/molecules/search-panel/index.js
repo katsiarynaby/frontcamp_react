@@ -13,8 +13,8 @@ const blockName = 'search-panel';
 export default class SearchPanel extends Component {
   state = {
     search: '',
-    searchBy: SEARCH_BY_FILTERS[0],
-    sortBy: SORT_BY_FILTERS[0],
+    searchBy: 'title',
+    sortBy: 'release_date',
   };
 
   getSearchField = value => {
