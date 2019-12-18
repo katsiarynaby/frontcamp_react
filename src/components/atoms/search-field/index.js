@@ -5,32 +5,32 @@ import './search-field.scss';
 const blockName = 'search-field';
 
 export default class SearchField extends PureComponent {
-  
-    static defaultProps = {
-      placeholder: 'SEARCH',
-      value: '',
-    };
 
-    state = {
-      value: this.props.value,
-    };
+  static defaultProps = {
+    placeholder: 'SEARCH',
+    value: '',
+  };
 
-    onChange = e => {
-      const { getValue } = this.props;
-      const { value } = e.target;
+  state = {
+    value: this.props.value,
+  };
 
-      this.setState({ value });
-      getValue(this.state.value);
-    };
+  onChange = e => {
+    const { getValue } = this.props;
+    const { value } = e.target;
 
-    render() {
-      return (
-        <input
-          type="search"
-          className={blockName}
-          onChange={this.onChange}
-          placeholder={this.props.placeholder}
-        />
-      );
-    }
+    this.setState({ value },
+      () => getValue(this.state.value));
+  };
+
+  render() {
+    return (
+      <input
+        type="search"
+        className={blockName}
+        onChange={this.onChange}
+        placeholder={this.props.placeholder}
+      />
+    );
+  }
 }

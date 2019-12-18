@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import CardFilm from '../../atoms/card-film';
 import Logo from '../../atoms/logo'
 
@@ -16,10 +17,10 @@ export default class ResultsBody extends PureComponent {
             {`${count} movie found`}
           </span>
         ) : (
-          <span>
-            {`Films by ${genre} genre`}
-          </span>
-        ))}
+            <span>
+              {`Films by ${genre} genre`}
+            </span>
+          ))}
       </div>
     );
   };
@@ -31,11 +32,16 @@ export default class ResultsBody extends PureComponent {
         return null;
       }
       return (
-        <CardFilm
+        <Link
           key={movie.id}
-          movie={movie}
-          onClick={() => chooseFilm(movie.id, movie.genres[0])}
-        />
+          to={`/film/${movie.id}`}
+        >
+          <CardFilm
+            key={movie.id}
+            movie={movie}
+            onClick={() => chooseFilm(movie.id)}
+          />
+        </Link>
       );
     }
     );
@@ -56,7 +62,7 @@ export default class ResultsBody extends PureComponent {
             <span className={`${blockName}__movies--no-found`}> No films found </span>}
         </div>
         <div className={`${blockName}__footer`}>
-        <Logo />
+          <Logo />
         </div>
       </div>
     );

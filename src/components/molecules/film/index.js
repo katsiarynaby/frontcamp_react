@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-
+import { withRouter, Link } from "react-router-dom";
 import { FaSearch } from 'react-icons/fa';
 import Logo from '../../atoms/logo';
 import { getYear } from '../../atoms/card-film/utils';
@@ -7,9 +7,19 @@ import { getYear } from '../../atoms/card-film/utils';
 import './film.scss';
 
 const blockName = 'film';
+class Film extends PureComponent {
 
-export default class Film extends PureComponent {
-  render() {
+  state = {};
+
+  static getDerivedStateFromProps(props) {
+    const { film, getFilm, match: { params } } = props;
+
+    (!film && getFilm(params.id))
+
+     return null;
+  }
+
+  renderContent = () => {
     const { film, onClickSearch } = this.props;
     const { title, tagline, vote_average, release_date, poster_path, overview, runtime } = film;
 
@@ -36,19 +46,31 @@ export default class Film extends PureComponent {
           <div className={`${blockName}__overview--release-and-runtime`}>
             <div className={`${blockName}__overview--release-and-runtime__release-date`}>
               {getYear(release_date)} <span>{`years`}</span>
-              </div>
+            </div>
             {runtime ?
               (<div className={`${blockName}__overview--release-and-runtime__runtime`}>
-              {runtime} <span>{`min`}</span>
+                {runtime} <span>{`min`}</span>
               </div>) :
               null}
           </div>
           <div className={`${blockName}__description`}>{overview}</div>
         </div>
-            <FaSearch 
+        <Link to='/movies'>
+          <FaSearch
             className={`${blockName}__icon-search`}
-             onClick={onClickSearch} />
+            onClick={onClickSearch} />
+        </Link>
       </div>
     );
   }
-}
+
+  render() {
+    return (
+      <>
+        {this.props.film ? this.renderContent() : "A few seconds, please..."}
+      </>
+    )
+  }
+};
+
+export default withRouter(Film);

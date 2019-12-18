@@ -16,7 +16,7 @@ export default class SearchButton extends PureComponent {
         onClick={onClick}
         value={value}
       >
-        {value}
+        {value.toUpperCase()}
       </button>
     );
   }

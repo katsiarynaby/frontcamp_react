@@ -1,6 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -47,23 +47,25 @@ module.exports = {
         MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: isDevelopment ? {sourceMap: true} : {},
+          options: isDevelopment ? { sourceMap: true } : {},
         }, {
           loader: 'sass-loader',
-          options: isDevelopment ? {sourceMap: true} : {},
+          options: isDevelopment ? { sourceMap: true } : {},
         }
       ]
     }, {
       test: /\.(png|svg|jpg|gif)$/,
       use: [
-         'file-loader',
-        ],
+        'file-loader',
+      ],
     },]
   },
   devServer: {
     compress: true,
     port: 9000,
     open: true,
+    historyApiFallback: true,
+    openPage: 'movies',
   },
   plugins: [
     new CleanWebpackPlugin(),
