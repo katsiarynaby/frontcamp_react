@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPanel SearchPanel should render correctly 1`] = `
+<div
+  className="search-panel"
+>
+  <Logo
+    className="search-panel__logo"
+  />
+  <h2
+    className="search-panel__title"
+  >
+    FIND YOUR MOVIE
+  </h2>
+  <div
+    className="search-panel__search"
+  >
+    <SearchField
+      getValue={[Function]}
+      placeholder="SEARCH"
+      value=""
+    />
+    <SearchButton
+      active={true}
+      onClick={[Function]}
+      value="SEARCH"
+    />
+  </div>
+  <div
+    className="search-panel__first-filter"
+  >
+    <SearchFilter
+      activeFilter="title"
+      filters={
+        Array [
+          Object {
+            "key": "title",
+            "name": "title",
+          },
+          Object {
+            "key": "genres",
+            "name": "genres",
+          },
+        ]
+      }
+      getActiveFilter={[Function]}
+      title="SEARCH BY"
+    />
+  </div>
+  <div
+    className="search-panel__second-filter"
+  >
+    <SearchFilter
+      activeFilter="release_date"
+      filters={
+        Array [
+          Object {
+            "key": "release_date",
+            "name": "release date",
+          },
+          Object {
+            "key": "vote_average",
+            "name": "rating",
+          },
+        ]
+      }
+      getActiveFilter={[Function]}
+      title="SORT BY"
+    />
+  </div>
+</div>
+`;

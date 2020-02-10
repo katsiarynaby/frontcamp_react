@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardFilm CardFilm should render correctly 1`] = `
+<div
+  className="card-film"
+  onClick={[MockFunction]}
+>
+  <img
+    className="card-film__image"
+    src="https://image.tmdb.org/t/p/w500/432BowXw7a4fWXSONxBaFKqvW4f.jpg"
+  />
+  <div
+    className="card-film__release-and-title"
+  >
+    <div
+      className="card-film__title"
+    >
+      Transformers 7
+    </div>
+    <div
+      className="card-film__date"
+    >
+      2019
+    </div>
+  </div>
+  <div
+    className="card-film__genre"
+  >
+    Science Fiction&Action&Adventure
+  </div>
+</div>
+`;

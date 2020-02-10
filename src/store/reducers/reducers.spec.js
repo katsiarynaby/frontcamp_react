@@ -22,7 +22,7 @@ describe('moviesReducer', () => {
         expect(moviesReducer(null, mockAction)).toMatchObject(mockState);
     });
 
-    it('moviesReducer should works correctly with seGenre action', () => {
+    it('moviesReducer should works correctly with setGenre action', () => {
         const mockAction = { type: 'ADD_MOVIE_GENRE', payload: 'drama' };
         const mockState = { genre: 'drama' };
 

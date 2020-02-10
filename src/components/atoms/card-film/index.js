@@ -9,8 +9,7 @@ const blockName = 'card-film';
 export default class CardFilm extends PureComponent {
   render() {
     const { movie, onClick } = this.props;
-    const { title, poster_path, release_date, genres} = movie;
-
+    const { title, poster_path, release_date, genres } = movie;
 
     return (
       <div

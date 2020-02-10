@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultsBody ResultsBody should render correctly 1`] = `
+<div
+  className="results-body"
+>
+  <div
+    className="results-body__additional-panel"
+  >
+    <div
+      className="results-body--result-count"
+    >
+      <span>
+        undefined movie found
+      </span>
+    </div>
+  </div>
+  <div
+    className="results-body__movies"
+  >
+    <Link
+      key="320288"
+      to="/film/320288"
+    >
+      <CardFilm
+        key="320288"
+        movie={
+          Object {
+            "budget": 0,
+            "genres": Array [
+              "Action",
+              "Science Fiction",
+            ],
+            "id": 320288,
+            "overview": "Gathered together by Professor Charles Xavier to protect a world that fears and hates them, the X-Men had fought many battles, been on adventures that spanned galaxies, grappled enemies of limitless might, but none of this could prepare them for the most shocking struggle they would ever face. One of their own members, Jean Grey, has gained power beyond all comprehension, and that power has corrupted her absolutely! Now, they must decide if the life of the woman they cherish is worth the existence of the entire universe!",
+            "poster_path": "https://image.tmdb.org/t/p/w500/6qmsupE0opYPIaBGe7T5D2FBzLs.jpg",
+            "release_date": "2019-02-14",
+            "revenue": 0,
+            "runtime": null,
+            "tagline": "",
+            "title": "X-Men: Dark Phoenix",
+            "vote_average": 0,
+            "vote_count": 0,
+          }
+        }
+        onClick={[Function]}
+      />
+    </Link>
+  </div>
+  <div
+    className="results-body__footer"
+  >
+    <Logo />
+  </div>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchButton SearchButton active should render correctly 1`] = `
+<button
+  className="search-button--active"
+  onClick={[MockFunction]}
+  type="button"
+  value="SEARCH"
+>
+  SEARCH
+</button>
+`;
+
+exports[`SearchButton SearchButton doesn't active should render correctly 1`] = `
+<button
+  className="search-button"
+  onClick={[MockFunction]}
+  type="button"
+  value="SEARCH"
+>
+  SEARCH
+</button>
+`;
